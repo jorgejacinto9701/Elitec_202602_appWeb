@@ -31,6 +31,7 @@ public class RegistroDirectorServlet extends HttpServlet {
 		objDirector.setNombre(nombre);
 		objDirector.setEmail(email);
 		objDirector.setTipo(objTipo);
+		objDirector.setEstado(1); // 1 = activo, 0 = inactivo	
 		
 		//3 Crear un objeto DirectorModel
 		DirectorModel model = new DirectorModel();
