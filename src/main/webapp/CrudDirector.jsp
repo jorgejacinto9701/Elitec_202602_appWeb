@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +38,7 @@
             <div class="col-12">
                 <table class="table table-striped" id="id_table">
                     <thead>
-                        <tr><th>CÃ³digo</th>
+                        <tr><th>Código</th>
                             <th>Nombre</th>
                             <th>Email</th>
                             <th>Tipo</th>
@@ -165,10 +163,10 @@
 	
 		 $(document).ready(function () {
 				$.ajax({
-				url: 'cargaComboTipoAlias', // URL del servlet para obtener categorÃ­as
+				url: 'cargaComboTipoAlias', // URL del servlet para obtener categorías
 				type: 'GET',
 				success: function (data) {
-					console.log('CategorÃ­as cargadas:', data);
+					console.log('Categorías cargadas:', data);
 					var comboBox = $('#id_reg_tipo');
 					data.forEach(function (obj) {
 						comboBox.append('<option value="' + obj.idTipo + '">' + obj.descripcion + '</option>');
@@ -179,7 +177,7 @@
 					});
 				},
 				error: function (xhr, status, error) {
-					console.error('Error al cargar categorÃ­as:', error);
+					console.error('Error al cargar categorías:', error);
 				}
 			});
 		});
@@ -195,7 +193,7 @@
 					agregarGrilla(response);
 				},
 				error: function () {
-					alert("Error al buscar libros por tÃ­tulo.");
+					alert("Error al buscar libros por título.");
 				}
 			});
 			
@@ -230,10 +228,10 @@
 							return '<button type="button" class="btn btn-info btn-sm" onClick="verFormularioActualiza(\'' + meta.row +'\');">Editar</button>';  
 						},className:'text-center'},
 						{data: function(row, type, val, meta){
-							return '<button type="button" class="btn btn-warning btn-sm" onClick="eliminacionLogica(\'' + row.idDirector +'\');" >E.LÃ³gica</button>';
+							return '<button type="button" class="btn btn-warning btn-sm" onClick="eliminacionLogica(\'' + row.idDirector +'\');" >E.Lógica</button>';
 						},className:'text-center'},
 						{data: function(row, type, val, meta){
-							return '<button type="button" class="btn btn-danger btn-sm"  onClick="eliminacionFisica(\'' + row.idDirector +'\');" >E.FÃ­sica</button>';
+							return '<button type="button" class="btn btn-danger btn-sm"  onClick="eliminacionFisica(\'' + row.idDirector +'\');" >E.Física</button>';
 						},className:'text-center'},
 					]                                     
 			    });
@@ -273,11 +271,11 @@
 	
 			function eliminacionFisica(id){
 			 	Swal.fire({
-			        title: 'Â¿EstÃ¡ seguro?',
-			        text: 'El director serÃ¡ eliminado permanentemente.',
+			        title: '¿Está seguro?',
+			        text: 'El director será eliminado permanentemente.',
 			        icon: 'warning',
 			        showCancelButton: true,
-			        confirmButtonText: 'SÃ­, eliminar',
+			        confirmButtonText: 'Sí, eliminar',
 			        cancelButtonText: 'Cancelar'
 			    }).then((result) => {
 			        if (result.isConfirmed) {
@@ -315,7 +313,7 @@
 		        	 modal.hide();
 				},
 				error: function (xhr, status, error) {
-					// Manejar errores aquÃ­
+					// Manejar errores aquí
 					console.error('Error al registrar :', error);
 				}
 			});
@@ -351,7 +349,7 @@
 		        	 modal.hide();
 				},
 				error: function (xhr, status, error) {
-					// Manejar errores aquÃ­
+					// Manejar errores aquí
 					console.error('Error al registrar :', error);
 				}
 			});

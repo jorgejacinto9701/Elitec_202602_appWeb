@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,16 +24,16 @@
 					<div class="invalid-feedback">Ingrese el registro</div>
 				</div>
 				<div class="col-9">
-					<label for="titulo">T√≠tulo</label> 
-					<input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ingrese el t√≠tulo" maxlength="30" required>
-					<div class="invalid-feedback">Ingrese el t√≠tulo</div>
+					<label for="titulo">TÌtulo</label> 
+					<input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ingrese el tÌtulo" maxlength="30" required>
+					<div class="invalid-feedback">Ingrese el tÌtulo</div>
 				</div>
 			</div>
 			<div class="row" style="margin-top: 2%;">	
 				<div class="col-4">
-					<label for="pais">Pa√≠s</label> 
-					<input type="text" class="form-control" id="pais" name="pais" placeholder="Ingrese el pa√≠s" maxlength="30" required>
-					<div class="invalid-feedback">Ingrese el pa√≠s</div>
+					<label for="pais">PaÌs</label> 
+					<input type="text" class="form-control" id="pais" name="pais" placeholder="Ingrese el paÌs" maxlength="30" required>
+					<div class="invalid-feedback">Ingrese el paÌs</div>
 				</div>
 				<div class="col-4">
 					<label for="autor">Autor</label> 
@@ -43,9 +41,9 @@
 					<div class="invalid-feedback">Ingrese el autor</div>
 				</div>
 				<div class="col-4">
-					<label for="fecCreacion">Fecha de Creaci√≥n</label> 
+					<label for="fecCreacion">Fecha de CreaciÛn</label> 
 					<input type="date" class="form-control" id="fecCreacion" name="fecCreacion" required>
-					<div class="invalid-feedback">Ingrese la Fecha de Creaci√≥n</div>
+					<div class="invalid-feedback">Ingrese la Fecha de CreaciÛn</div>
 				</div>
 			</div>
 			<div class="row justify-content-center" style="margin-top: 2%">
@@ -56,7 +54,7 @@
 	<script type="text/javascript">
 		$("#btnRegistrar").click(function(e) {
 			console.log("click en registrar");		
-			e.preventDefault(); //Evita que el formulario se env√≠e autom√°ticamente
+			e.preventDefault(); //Evita que el formulario se envÌe autom·ticamente
 	
 			
 			let form = $('#formLibro')[0];
@@ -79,14 +77,14 @@
 					//limpiar las validaciones
 					$('#formLibro').removeClass('was-validated');
 					
-					//enviar un mensaje de √©xito al usuario en forma de div que dure 3 segundos
+					//enviar un mensaje de Èxito al usuario en forma de div que dure 3 segundos
 					$('#formLibro').prepend('<div class="alert alert-success" role="alert">'+ response.mensajeSalida +'</div>');
 					setTimeout(function () {
 						$('.alert').remove();
 					}, 3000);
 				},
 				error: function (xhr, status, error) {
-					// Manejar errores aqu√≠
+					// Manejar errores aquÌ
 					console.error('Error al registrar :', error);
 				}
 			});

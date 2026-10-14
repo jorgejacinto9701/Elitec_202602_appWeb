@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,17 +43,17 @@
 	<script type="text/javascript">
 		  $(document).ready(function () {
 				$.ajax({
-				url: 'cargaComboTipoAlias', // URL del servlet para obtener categor√≠as
+				url: 'cargaComboTipoAlias', // URL del servlet para obtener categorÌas
 				type: 'GET',
 				success: function (data) {
-					console.log('Categor√≠as cargadas:', data);
+					console.log('CategorÌas cargadas:', data);
 					var comboBox = $('#tipo');
 					data.forEach(function (obj) {
 						comboBox.append('<option value="' + obj.idTipo + '">' + obj.descripcion + '</option>');
 					});
 				},
 				error: function (xhr, status, error) {
-					console.error('Error al cargar categor√≠as:', error);
+					console.error('Error al cargar categorÌas:', error);
 				}
 			});
 		});
@@ -63,7 +61,7 @@
 	
 		$("#btnRegistrar").click(function(e) {
 			console.log("click en registrar");		
-			e.preventDefault(); //Evita que el formulario se env√≠e autom√°ticamente
+			e.preventDefault(); //Evita que el formulario se envÌe autom·ticamente
 	
 			
 			let form = $('#form')[0];
@@ -86,14 +84,14 @@
 					//limpiar las validaciones
 					$('#form').removeClass('was-validated');
 					
-					//enviar un mensaje de √©xito al usuario en forma de div que dure 3 segundos
+					//enviar un mensaje de Èxito al usuario en forma de div que dure 3 segundos
 					$('#form').prepend('<div class="alert alert-success" role="alert">'+ response.mensajeSalida +'</div>');
 					setTimeout(function () {
 						$('.alert').remove();
 					}, 3000);
 				},
 				error: function (xhr, status, error) {
-					// Manejar errores aqu√≠
+					// Manejar errores aquÌ
 					console.error('Error al registrar :', error);
 				}
 			});
