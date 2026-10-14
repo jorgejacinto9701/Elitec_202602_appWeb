@@ -18,7 +18,7 @@ public class TipoModel {
 		ResultSet rs = null;
 		try {
             conn = MySqlDBConexion.getConexion();
-            String sql = "select * from tipo";
+            String sql = "select * from tipo  order by descripcion asc";
             pstm = conn.prepareStatement(sql);
             rs = pstm.executeQuery();
             while(rs.next()) {

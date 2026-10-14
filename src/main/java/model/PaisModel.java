@@ -18,7 +18,7 @@ public class PaisModel {
 		ResultSet rs = null;
 		try {
             conn = MySqlDBConexion.getConexion();
-            String sql = "select * from pais";
+            String sql = "select * from pais order by nombre asc";
             pstm = conn.prepareStatement(sql);
             rs = pstm.executeQuery();
             while(rs.next()) {

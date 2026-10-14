@@ -44,6 +44,7 @@
                             <th>Siglas</th>
                             <th>Dirección</th>
                             <th>País</th>
+                            <th>Gestión</th>
                             <th>Estado</th>
                             <th></th>
                             <th></th>
@@ -95,7 +96,16 @@
 								</select>
 	                        </div>
 	                    </div>
-	
+						<div class="row mb-3">
+	                        <label for="id_reg_gestion" class="col-md-3 col-form-label">Tipo Gestión</label>
+	                        <div class="col-md-9">
+	                            <select class="form-select" id="id_reg_gestion" name="tipoGestion">
+									<option value="">[Seleccione]</option>
+									<option value="Privado">Privado</option>
+									<option value="Público">Público</option>
+								</select>
+	                        </div>
+	                    </div>
 	                    <div class="text-center">
 	                        <button type="button" id="id_btn_registra" class="btn btn-primary me-2">Registrar</button>
 	                    </div>
@@ -152,6 +162,16 @@
 	                                <option value="">[Seleccione]</option>
 	                                <option value="1">Activo</option>
 	                                <option value="0">Inactivo</option>
+	                            </select>
+	                        </div>
+	                    </div>
+	                    <div class="row mb-3">
+	                        <label for="id_act_gestion" class="col-md-3 col-form-label">Tipo Gestión</label>
+	                        <div class="col-md-9">
+	                            <select class="form-select" id="id_act_gestion" name="tipoGestion">
+	                                <option value="">[Seleccione]</option>
+	                                <option value="Privado">Privado</option>
+									<option value="Público">Público</option>
 	                            </select>
 	                        </div>
 	                    </div>
@@ -223,6 +243,7 @@
 						{data: "siglas", className:'text-center'},
 						{data: "direccion", className:'text-center'},
 						{data: "pais.nombre", className:'text-center'},
+						{data: "tipoGestion", className:'text-center'},
 						{data: function(row, type, val, meta){
 							return row.estado == 1 ? "Activo" : "Inactivo";  
 						}, className:'text-center'},
@@ -324,6 +345,7 @@
 		    $("#id_act_direccion").val(objGrilla.direccion);
 		    $("#id_act_estado").val(objGrilla.estado);
 		    $("#id_act_pais").val(objGrilla.pais.idPais);
+		    $("#id_act_gestion").val(objGrilla.tipoGestion);
 		    
 		    const modal = new bootstrap.Modal($('#id_div_modal_actualiza'));
 		    modal.show();
